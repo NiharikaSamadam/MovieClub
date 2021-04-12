@@ -20,7 +20,7 @@ const jwt = require("jsonwebtoken")
 
 //import token
 const validateToken = require('./middlewares/verifyToken')
-const { convertToObject } = require("typescript")
+
 
 //import payload
 userApiObj.use(exp.json())
