@@ -36,8 +36,6 @@ export class EditmovieComponent implements OnInit {
 
               this.toastr.warning(data['reason'])
 
-              //navigate to login
-              this.router.navigateByUrl("/login")
             }
            else{
             this.movieObj = data['message']
@@ -71,8 +69,6 @@ export class EditmovieComponent implements OnInit {
 
             this.toastr.warning(res['reason'])
 
-            //navigate to login
-            this.router.navigateByUrl("/login")
           }
           else{
             

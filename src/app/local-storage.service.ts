@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LocalStorageService {
 
-  constructor(private hc : HttpClient) { }
+  constructor(private hc : HttpClient,private router:Router) { }
 
   //Login Status
   private status : boolean = false
@@ -65,9 +66,12 @@ export class LocalStorageService {
  logOutService(){
    localStorage.clear()
 
-   this.setLoginStatus(false)
+    this.setLoginStatus(false)
     this.setUsername(null)
     this.setUserType(null)
+     
+     //navigate to login
+     this.router.navigateByUrl("/login")
 
   }
 

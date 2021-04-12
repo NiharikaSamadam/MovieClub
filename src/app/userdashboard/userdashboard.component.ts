@@ -29,8 +29,8 @@ export class UserdashboardComponent implements OnInit {
           this.ls.logOutService()
 
            this.toastr.warning(res['reason'])
-          //navigate to login
-          this.router.navigateByUrl("/login")
+        
+         
         }
         else{
         this.moviesArray = res['message']
@@ -51,7 +51,18 @@ export class UserdashboardComponent implements OnInit {
 
   searchMovie(){
     
-    this.router.navigateByUrl(`/userdashboard/${localStorage.getItem("username")}/search/${this.search}`)
+    if(localStorage.getItem("username") != null){
+      this.router.navigateByUrl(`/userdashboard/${localStorage.getItem("username")}/search/${this.search}`)
+    }
+
+    else{
+      this.toastr.warning("Please login to continue...")
+      this.ls.logOutService()
+    }
+    
   }
 
+  activateRoute(){
+    this.opened = !this.opened
+  }
 }

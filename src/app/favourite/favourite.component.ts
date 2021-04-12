@@ -54,8 +54,6 @@ export class FavouriteComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
         }
         else{
           if(res['message'] == "Removed from favourites.."){

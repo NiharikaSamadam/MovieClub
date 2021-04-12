@@ -25,8 +25,7 @@ export class WatchlistComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
+         
         }
         else{
           this.watchlistArray = res['watchList']

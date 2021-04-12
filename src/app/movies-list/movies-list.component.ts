@@ -35,8 +35,7 @@ export class MoviesListComponent implements OnInit {
           this.ls.logOutService()
 
           this.toastr.warning(res['reason'])
-          //navigate to login
-          this.router.navigateByUrl("/login")
+         
         }
         else{
 
@@ -100,8 +99,7 @@ export class MoviesListComponent implements OnInit {
             this.toastr.warning(res['reason'])
              localStorage.clear()
             
-             //navigate to login
-             this.router.navigateByUrl("/login")
+            
            }
       },
       err=>{

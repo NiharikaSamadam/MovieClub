@@ -66,13 +66,6 @@ export class AppComponent implements OnInit{
   }
 
   logOut(){
-    localStorage.clear()
-
-    this.loginStatus = false
-    this.username = null
-    this.usertype = null
-
-    //navigate to login
-    this.router.navigateByUrl("/login")
+   this.ls.logOutService()
   }
 }

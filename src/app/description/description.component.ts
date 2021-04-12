@@ -37,8 +37,6 @@ export class DescriptionComponent implements OnInit {
 
               this.toastr.warning(data['reason'])
 
-              //navigate to login
-              this.router.navigateByUrl("/login")
             }
            else{
                 this.movieObj = data['message']
@@ -71,8 +69,6 @@ export class DescriptionComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
         }
       },
       err => {
@@ -100,8 +96,7 @@ export class DescriptionComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
+         
         }
         else{
           
@@ -136,8 +131,7 @@ export class DescriptionComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
+        
         }
         else{
           

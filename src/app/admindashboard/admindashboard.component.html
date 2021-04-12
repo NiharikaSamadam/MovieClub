@@ -7,10 +7,10 @@
           <div (click)="toggleSidebar()" class="text-white " style="font-size: 2rem; "><i class="bi bi-arrow-left-circle"></i></div> 
           <ul class="list-unstyled charm" >
               <li class="nav-item">
-                  <a class="nav-link text-white" style="font-size: 1.5rem; " routerLink="addmovie"><i class="bi bi-file-earmark-plus m-2"></i>Add Movie</a>
+                  <a class="nav-link text-white" style="font-size: 1.5rem; " routerLink="addmovie" (click) = "activateRoute()"><i class="bi bi-file-earmark-plus m-2"></i>Add Movie</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "movieslist"><i class="bi bi-film m-2"></i>Movies List</a>
+                  <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "movieslist" (click) = "activateRoute()"><i class="bi bi-film m-2"></i>Movies List</a>
               </li>
           </ul>
 

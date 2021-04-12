@@ -56,8 +56,6 @@ export class HistoryComponent implements OnInit {
 
           this.toastr.warning(res['reason'])
 
-          //navigate to login
-          this.router.navigateByUrl("/login")
         }
         else{
             

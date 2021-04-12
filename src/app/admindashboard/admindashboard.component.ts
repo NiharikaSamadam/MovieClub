@@ -20,7 +20,9 @@ export class AdmindashboardComponent implements OnInit {
  }
 
   
-
+ activateRoute(){
+  this.opened = !this.opened
+}
  
 
  

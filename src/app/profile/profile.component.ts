@@ -29,8 +29,7 @@ export class ProfileComponent implements OnInit {
           this.ls.logOutService()
 
           this.toastr.warning(res['reason'])
-          //navigate to login
-          this.router.navigateByUrl("/login")
+         
         }
         else{
            
