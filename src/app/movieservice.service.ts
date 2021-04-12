@@ -27,7 +27,7 @@ export class MovieserviceService {
   }
 
   deleteMovieFromWatchlist(movieObj):Observable<any>{
-    console.log("In service",movieObj)
+  
     return this.hc.post('/user/deletefromwatchlist',movieObj)
   }
 
@@ -40,12 +40,12 @@ export class MovieserviceService {
   }
 
   deleteMovieFromHistory(movieObj):Observable<any>{
-    console.log(movieObj)
+    
     return this.hc.post(`/user/deletefromhistory`,movieObj)
   }
 
   addtoFavourites(movie):Observable<any>{
-    console.log(movie)
+    
     return this.hc.put(`/user/addtofavourites/${localStorage.getItem("username")}`,movie)
   }
 

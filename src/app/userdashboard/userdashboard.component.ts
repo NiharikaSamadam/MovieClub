@@ -50,7 +50,7 @@ export class UserdashboardComponent implements OnInit {
   }
 
   searchMovie(){
-    console.log(this.search)
+    
     this.router.navigateByUrl(`/userdashboard/${localStorage.getItem("username")}/search/${this.search}`)
   }
 

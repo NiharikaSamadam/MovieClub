@@ -41,7 +41,6 @@ export class EditmovieComponent implements OnInit {
             }
            else{
             this.movieObj = data['message']
-            console.log(this.movieObj)
            }
           }
         )

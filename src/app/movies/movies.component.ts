@@ -39,8 +39,6 @@ export class MoviesComponent implements OnInit {
         else{
         this.moviesArray = res['message']
        
-        console.log(this.moviesArray)
-
         for(let i of this.moviesArray){
           if(i.language == 'Telugu'){
 

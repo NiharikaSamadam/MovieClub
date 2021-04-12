@@ -17,7 +17,7 @@ export class LocalStorageService {
 
   //recieve status from login component
   setLoginStatus(status){
-    console.log("loginstatus in service",status)
+    
     this.loginStatus.next(status)
   }
 
@@ -34,7 +34,7 @@ export class LocalStorageService {
 
   //recieve username
   setUsername(username){
-    console.log("username in service",username)
+    
     this.userName.next(username)
   }
 
@@ -52,7 +52,7 @@ export class LocalStorageService {
 
  //set usertype
  setUserType(usertype){
-   console.log("usertype in service",usertype)
+  
    this.userType.next(usertype)
  }
 

@@ -42,7 +42,6 @@ export class DescriptionComponent implements OnInit {
             }
            else{
                 this.movieObj = data['message']
-                console.log(this.movieObj)
            }
           }
         )

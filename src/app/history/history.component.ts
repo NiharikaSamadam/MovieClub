@@ -33,7 +33,7 @@ export class HistoryComponent implements OnInit {
         else{
               
           this.historyArray = res['history']
-          console.log(this.historyArray)
+          
         }
       },
       err => {

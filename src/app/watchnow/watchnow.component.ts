@@ -17,7 +17,7 @@ export class WatchnowComponent implements OnInit {
     this.ar.params.subscribe(
       res => {
          this.language = res.language
-         console.log(this.language)
+         
       },
       err => {
          this.toastr.error("Something went wrong")

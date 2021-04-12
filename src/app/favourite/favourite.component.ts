@@ -32,7 +32,7 @@ export class FavouriteComponent implements OnInit {
         else{
           
           this.favouritesArray = res['favourites']
-          console.log(this.favouritesArray)
+          
         }
       },
       err => {
@@ -62,7 +62,7 @@ export class FavouriteComponent implements OnInit {
             
             this.toastr.success(res['message'])
             this.favouritesArray = res['favourites']
-            console.log(this.favouritesArray)
+            
           }
           
         }

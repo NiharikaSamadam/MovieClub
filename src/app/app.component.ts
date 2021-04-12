@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
     this.ls.getLoginStatus().subscribe(
       status => {
         this.loginStatus = status
-        console.log(this.loginStatus)
+        
       }
     )
 
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit{
     this.ls.getUsername().subscribe(
       name => {
         this.username = name
-        console.log(this.username)
+        
       }
     )
 
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
     this.ls.getUserType().subscribe(
       type => {
         this.usertype = type
-        console.log(this.usertype)
+        
       }
     )
 
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit{
       this.loginStatus = true
       this.username = localStorage.getItem("username")
       this.usertype = localStorage.getItem("usertype")
-      console.log("local ",this.loginStatus,this.username,this.usertype)
+     
     }
 
   }

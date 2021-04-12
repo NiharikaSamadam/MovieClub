@@ -75,7 +75,7 @@ export class MoviesListComponent implements OnInit {
   deleteMovie(movie,ind){
 
     let movieObj = {moviename:movie.moviename,language:movie.language}
-    console.log(ind,movie.language)
+    
     this.as.deleteMovie(movieObj).subscribe(
       res=>{
            if(res['message'] == 'Movie deleted successfully'){
@@ -93,10 +93,7 @@ export class MoviesListComponent implements OnInit {
             if(movie.language == 'English'){
                this.englishmovies.splice(ind,1)
             }
-
-            //navigate to add movie
-           // this.router.navigateByUrl(`/admindashboard/${localStorage.getItem("username")}/addmovie`)
-
+            
            }
            else{
              

@@ -30,7 +30,7 @@ export class WatchlistComponent implements OnInit {
         }
         else{
           this.watchlistArray = res['watchList']
-          console.log(this.watchlistArray)
+          
         }
       },
       err => {
@@ -41,7 +41,7 @@ export class WatchlistComponent implements OnInit {
   }
 
   description(moviename,language){
-    console.log(moviename,language)
+    
        //navigate to description
        this.router.navigateByUrl(`/userdashboard/${localStorage.getItem("username")}/description/${language}/${moviename}`)
   }
@@ -51,8 +51,6 @@ export class WatchlistComponent implements OnInit {
 
     let deleteMovieObj = {username:localStorage.getItem("username"),moviename:watch.moviename,language:watch.language}
     
-    console.log(deleteMovieObj)
-
     this.ms.deleteMovieFromWatchlist(deleteMovieObj).subscribe(
       res => {
         if(res['message'] == "failed"){

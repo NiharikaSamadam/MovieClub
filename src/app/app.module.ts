@@ -62,7 +62,7 @@ import { SearchComponent } from './search/search.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       closeButton:true,
-      timeOut : 5000,
+      timeOut : 1000,
       progressBar : true,
       progressAnimation:'increasing',
       preventDuplicates:true,

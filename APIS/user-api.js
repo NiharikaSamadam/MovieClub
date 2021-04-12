@@ -245,7 +245,6 @@ userApiObj.get('/getmoviesfromhistory/:username',validateToken,expressHandlers(a
 //http://localhost:3000/user/deletefromhistory
 userApiObj.post("/deletefromhistory",validateToken,expressHandlers(async(req,res) => {
   
-    console.log(req.body)
     //get user from db
     let userObjFromDb = await User.findOne({username : req.body.username})
 

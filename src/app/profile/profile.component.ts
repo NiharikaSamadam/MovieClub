@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
         else{
            
           this.userObj = res['message']
-          console.log(this.userObj)
+          
         }
       },
       err =>{

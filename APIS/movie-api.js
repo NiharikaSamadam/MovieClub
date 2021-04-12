@@ -45,7 +45,7 @@ movieApiObj.post("/createmovie",validateToken,upload.single('image'),expressHand
       //the req.body.userObj is in JSON,so convert to object
    req.body=JSON.parse(req.body.movieObj)
    req.body.image=req.file.path;
-   console.log(req.body)
+  
     //search for movie in db with movie name
     let movieObjFromDb = await Movie.findOne({$and:[{moviename:req.body.moviename},{language:req.body.language}]})
 

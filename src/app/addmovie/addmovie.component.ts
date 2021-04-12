@@ -31,8 +31,7 @@ export class AddmovieComponent implements OnInit {
   incomingfile(event){
      
    this.file = event.target.files[0]
-   console.log("file",this.file)
-  
+   
   }
 
   
@@ -44,9 +43,8 @@ export class AddmovieComponent implements OnInit {
      delete movieObj.photo
 
      let genres = movieObj.genres.split(", ")
-     console.log(genres)
+     
      movieObj.genres = genres
-     console.log(movieObj)
      
      let formData = new FormData()
      formData.append("image",this.file,this.file.name)

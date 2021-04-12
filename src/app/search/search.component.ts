@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
     this.ar.params.subscribe(
       res => {
         this.search = res.searchby
-        console.log(res.searchby)
+        
         this.ms.getMovie(res.searchby).subscribe(
           data => {
             if(res['message'] == "failed")
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
             }
             else{
               this.moviesArray = data['message']
-              console.log(this.moviesArray)
+              
             }
           }
         )
