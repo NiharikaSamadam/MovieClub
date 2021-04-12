@@ -1,0 +1,65 @@
+
+ <!-- List of Telugu Movies -->
+    <div class="container my-5 ">
+        <h1 class="header charm">Telugu Movies</h1>
+        <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+           <div class="col" *ngFor="let movie of telugumovies; let ind = index">
+               <div class="card border-dark bg-transparent ">
+                <div class="text-end ">
+                    <span class="text-primary m-2" style="font-size: 2rem;" (click) = "editmovie(movie.moviename,movie.language)"><i class="bi bi-pencil-square"></i></span>
+                    <span class=" text-danger m-2" style="font-size: 2rem;" (click)="deleteMovie(movie,ind)"><i class="bi bi-x-square"></i></span>
+                </div>
+                   <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie.moviename,movie.language)">
+                   <div class="card-body">
+                       <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                           <p>{{movie.moviename}}</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <!-- List of Hindi Movies -->
+    <div class="container my-5">
+        <h1 class="header charm">Hindi Movies</h1>
+        <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+           <div class="col" *ngFor="let movie of hindimovies; let ind = index">
+               <div class="card border-dark bg-transparent ">
+                   <div class="text-end ">
+                      <span class="text-primary m-2" style="font-size: 2rem;" (click) = "editmovie(movie.moviename,movie.language)"><i class="bi bi-pencil-square"></i></span>
+                      <span class=" text-danger m-2" style="font-size: 2rem;" (click)="deleteMovie(movie,ind)"><i class="bi bi-x-square"></i></span>
+                  </div>
+                   <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie.moviename,movie.language)">
+                   <div class="card-body">
+                       <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                           <p>{{movie.moviename}}</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <!-- List of English Movies -->
+    <div class="container my-5">
+        <h1 class="header charm">English Movies</h1>
+        <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+           <div class="col" *ngFor="let movie of englishmovies; let ind = index">
+               <div class="card border-dark bg-transparent ">
+                <div class="text-end ">
+                    <span class="text-primary m-2" style="font-size: 2rem;" (click) = "editmovie(movie.moviename,movie.language)"><i class="bi bi-pencil-square"></i></span>
+                    <span class=" text-danger m-2" style="font-size: 2rem;" (click)="deleteMovie(movie,ind)"><i class="bi bi-x-square"></i></span>
+                </div>
+                   <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie.moviename,movie.language)">
+                   <div class="card-body">
+                       <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                           <p>{{movie.moviename}}</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    
+

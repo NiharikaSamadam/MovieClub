@@ -1,0 +1,37 @@
+<div class = "container">
+<div class="row mb-3 description-background">
+    <div class="col-md-4 col-sm-1 col-1"></div>
+    <div class="col-md-4 col-sm-10 col-10 mt-3 border border-dark bg-transparent shadow mb-5 bounce-in-top">
+       <img [src] = "movieObj?.image" alt="image" class="img-fluid d-block mx-auto mb-2 mt-2">
+       <div class="d-flex justify-content-between m-3">
+           <h2 class="text-white lobsterTwo">{{movieObj?.moviename}}</h2>
+           <div class="d-flex justify-content-between">
+               <div class="text-white fs-3 me-3" (click) = "favourites(movieObj)"><i class="bi bi-heart"></i></div>
+               <div class="text-white fs-3" (click) = "watchlist(movieObj)"><i class="bi bi-plus-circle"></i></div>
+           </div>
+       </div>
+       <div class="row g-2 m-3  courgette text-white">
+           <div class="col-5 fs-4">Language</div>
+           <div class="col-7 fs-5">{{movieObj?.language}}</div>
+           <div class="col-5 fs-4">Genres</div>
+           <div class="col-7 fs-5" >
+               <ul class="list-unstyled">
+                   <li *ngFor = "let g of movieObj?.genres">{{g}}</li>
+               </ul>
+           </div>
+           <div class="col-5 fs-4">Director</div>
+           <div class="col-7 fs-5">{{movieObj?.director}}</div>
+           <div class="col-5 fs-4">Cast</div>
+           <div class="col-7 fs-5">{{movieObj?.cast}}</div>
+       </div>
+       <div class="text-white courgette m-3">
+       <h5 class="fs-4">Description</h5>
+       <p class="fs-5">{{movieObj?.description}}</p>
+    </div>
+    <div class="text-center mb-3">
+          <button class="btn text-white btn-color text-center fs-5 kellyslab" (click) = "watchNow(movieObj)">Watch Now</button>
+    </div>
+    </div>
+    <div class="col-md-4 col-sm-1 col-1"></div>
+</div>
+</div>

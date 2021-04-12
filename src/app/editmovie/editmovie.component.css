@@ -1,0 +1,20 @@
+.form-control.ng-touched.ng-invalid{
+    border: 3px solid red;
+}
+
+.addmovie-background{
+    background-image: url("../../assets/images//bgimage2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.form-background{
+    background-color: #C5C6C7;
+}
+
+.btn-color{
+    background-color: #1F2833;
+    color: white;
+}

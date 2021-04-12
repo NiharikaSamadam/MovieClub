@@ -1,0 +1,24 @@
+<nav class="navbar sticky-top navbar-expand-md nav-background navbar-dark">
+  <div class="container-fluid ms-2">
+    <a class="navbar-brand text-white fs-2 logo" ><h1>Movie Club</h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse charm" id="navbarmenu">
+      <ul class="navbar-nav ms-auto me-5">
+        <li class="nav-item">
+          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "!loginStatus"  routerLink="home">Home</a>
+          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "loginStatus"  routerLink="" (click)="dashboard()"></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link active fs-4  p-2"  *ngIf = "loginStatus && username != null">Welcome {{username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "!loginStatus" routerLink="login">Login</a>
+          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "loginStatus" routerLink="" (click) = "logOut()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

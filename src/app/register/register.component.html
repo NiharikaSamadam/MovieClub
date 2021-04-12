@@ -1,0 +1,92 @@
+<div class="background reg-background">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-1 col-1"></div>
+            <div class="col-lg-4  mb-5 col-md-6 col-sm-10 col-10 mt-5 fade-in-top login-background">
+                <h3 class="text-center mt-5 mb-3 text-dark fw-bold charm">Register</h3>
+                <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  
+                    <!-- USERNAME -->
+                    <div class="form-floating m-3">
+                        <input type="text" class="form-control" id="username" placeholder="username" formControlName = "username" autocomplete="off">
+                        <label for="username">Username</label>
+    
+                        <!-- Validations for username -->
+                        <div *ngIf = "submitted || getcontrols().username.touched && !getcontrols().username.valid || getcontrols().username.dirty" class="text-danger ">
+                            <div *ngIf = "getcontrols().username.errors?.required">*Username is required</div>
+                            <div *ngIf = "getcontrols().username.errors?.minlength || getcontrols().username.errors?.pattern">*Accepts alphabets & spaces, minimum length should be 4</div>
+                        </div>
+                    </div>
+    
+                    <!-- PHONE NUMBER -->
+                    <div class="form-floating m-3">
+                        <input type="tel" class="form-control" id="phone" placeholder="phone" formControlName = "phone" autocomplete="off">
+                        <label for="phone">Phone Number</label>
+                      
+                        <!-- Validations for phone number -->
+                        <div *ngIf = "submitted || getcontrols().phone.touched && !getcontrols().phone.valid || getcontrols().phone.dirty" class="text-danger ">
+                            <div *ngIf = "getcontrols().phone.errors?.required">*Phone number is required </div>
+                            <div *ngIf = "getcontrols().phone.errors?.minlength || getcontrols().phone.errors?.pattern">*Accepts only numbers & length should be 10 digits</div>
+                        </div>
+                    </div>
+    
+                    <!-- EMAIL -->
+                    <div class="form-floating m-3">
+                        <input type="email" class="form-control" id="email" placeholder="example@example.com" formControlName = "email" autocomplete="off">
+                        <label for="email">Email</label>
+    
+                        <!-- Validations for email -->
+                        <div *ngIf = " submitted || getcontrols().email.touched && !getcontrols().email.valid || getcontrols().email.dirty" class="text-danger ">
+                            <div *ngIf = "getcontrols().email.errors?.required">*Email is required</div>
+                            <div *ngIf = "getcontrols().email.errors?.email">*Invalid Email</div>
+                        </div>
+                    </div>
+    
+                    <!-- PASSWORD -->
+                    <div class="form-floating m-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password" aria-describedby="passwordtext" formControlName = "password">
+                        <label for="password">Password</label>
+                        <span id="passwordtext" class="form-text">
+                            Must be 4 characters long,atleast one capital letter,  one small letter and one number.
+                          </span>
+    
+                         <!-- Validations for password  -->
+                        <div *ngIf = "submitted || getcontrols().password.touched && !getcontrols().password.valid || getcontrols().password.dirty" class="text-danger">
+                            <div *ngIf = "getcontrols().password.errors?.required">*Password is required </div>
+                            <div *ngIf = "getcontrols().password.errors?.minlength || getcontrols().password.errors?.pattern">*Password should contain atleast one Capital letter, Small letter and one Number</div>
+                        </div>
+                    </div>
+    
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="form-floating m-3">
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" aria-describedby="confirmpasswordtext" formControlName = "confirmpassword">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <span id="confirmpasswordtext" class="form-text">
+                           Password and Confirm Password must be same
+                        </span>
+    
+                        <!-- Validations for confirm password -->
+                        <div *ngIf = "submitted || getcontrols().confirmpassword.touched && !getcontrols().confirmpassword.valid || getcontrols().confirmpassword.dirty" class="text-danger">
+                            <div *ngIf = "getcontrols().confirmpassword.errors?.required">*Password is required </div>
+                            <div *ngIf = "getcontrols().confirmpassword.valid && getcontrols().confirmpassword.value != getcontrols().password.value">*Passwords doesn't match</div>
+                        </div>
+                    </div>
+    
+                    <!-- SUBMIT BUTTON -->
+                    <div class="text-center mb-3">
+                        <button class="btn submit-btn btn-lg text-white " value="submit">Register</button>
+                    </div>
+                </form>
+    
+                <!-- Navigate to login page -->
+                <hr class = "my-2">
+                <div class="text-center">
+                    <p class="text-content m-3">Already have an Account? </p>
+                    <button class="btn button-color mb-5 kellyslab"  (click)="login()">Login to your account</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-1 col-1"></div>
+        </div>
+    </div>
+    </div>
+    <app-footer></app-footer>

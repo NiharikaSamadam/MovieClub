@@ -1,0 +1,80 @@
+<div class="background">
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-lg-4 col-md-3 col-sm-1 col-1"></div>
+        <div class="col-lg-4  col-md-6 col-sm-10 col-10 mt-5 fade-in-top login-background">
+            <h3 class="text-center mt-5 mb-3 fw-bold charm">Login</h3>
+            <form class="form" #ref="ngForm" (ngSubmit)="ref.form.valid && onSubmit(ref)">
+
+                <!-- USERTYPE -->
+                <div class="form-group m-3">
+                    <div class="form-check-inline form-switch">
+                        <input class="form-check-input me-2" type="radio" id="user" name="usertype" required 
+                               #usertype="ngModel" value="user" ngModel>
+                        <label class="form-check-label" for="user">User</label>
+                      </div>
+                      <div class="form-check-inline form-switch">
+                        <input class="form-check-input me-2" type="radio" id="admin" name="usertype"
+                              required #usertype="ngModel" value="admin" ngModel>
+                        <label class="form-check-label" for="admin">Admin</label>
+                      </div>
+
+                      <!-- Validations for usertype -->
+                  <div class="text-danger" *ngIf="ref.submitted || usertype.touched && !usertype.valid">
+                    <div *ngIf="usertype.errors?.required">*Usertype is required</div>
+                </div>
+                </div>
+
+                <!-- USERNAME -->
+                <div class="form-floating m-3">
+                    <input type="text" class="form-control" id="username" placeholder="username" required minlength = "4" 
+                            pattern="^[a-zA-Z ]*$"  #username = "ngModel" name = "username" ngModel autocomplete="off">
+                    <label for="username">Username</label>
+
+                    <!-- Validations for username -->
+                    <div *ngIf = "ref.submitted || username.touched && !username.valid || username.dirty" class="text-danger ">
+                        <div *ngIf = "username.errors?.required">*Username is required</div>
+                        <div *ngIf = "username.errors?.minlength || username.errors?.pattern">
+                            *Accepts alphabets & spaces, minimum length should be 4
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-floating m-3">
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password"
+                         #password="ngModel" aria-describedby="passwordtext" required minlength="4" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$" placeholder="password" ngModel>
+                        <label for="password">Password</label>
+                      </div>
+                   <span id="passwordtext" class="form-text">
+                       Must be 4 characters long,atleast one capital letter, one small letter and one number.
+                   </span>
+
+                   <!-- Validations for password -->
+                   <div class="text-danger" *ngIf = "ref.submitted ||  password.touched && !password.valid || password.dirty">
+                     <div *ngIf="password.errors?.required">*Password is required</div>
+                     <div *ngIf="password.errors?.minlength || password.errors?.pattern"> 
+                         Password contains atleast 1 Capital letter, 1 small letter & 1 number and minimum of 4 chaacters
+                     </div>
+                   </div>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <div class="text-center mb-3">
+                    <button class="btn submit-btn btn-lg text-white" value="submit">Login</button>
+                </div>
+            </form>
+            <hr class = "my-2">
+
+            <!-- Navigate to register page -->
+            <div class="text-center">
+                <p class="text-content m-3">New to Movie Club? </p>
+                <button class="btn button-color mb-5 kellyslab"  (click)="register()"> Create an Account</button>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-1 col-1"></div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+
+
+.login-background{
+    background-color: #c5c6c7;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.button-color{
+    background-color: #45A29E;
+}
+.submit-btn
+{
+    background-color: #464866;
+    font-family: 'Kelly Slab', cursive;
+}
+
+
+.form-control.ng-touched.ng-invalid{
+    border: 3px solid red;
+}

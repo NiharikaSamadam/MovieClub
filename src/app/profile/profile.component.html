@@ -1,0 +1,41 @@
+
+<div class="container ">
+    <div class="row profile-background">
+        <div class="col-md-1"></div>
+        <div class="col-10">
+            <div class="row ">
+                <div class="col-md-3 col-sm-1 col-1"></div>
+                
+                <div class=" col-sm-10 mt-3 p-5 col-10 text-white d-flex  m-auto justify-content-center">
+                    <div class=" mt-4 mx-3 p-2 border border-dark bg-transparent shadow">
+                    <div class="mb-3 mx-auto d-flex justify-content-center" style="font-size: 100px;color: #66fcf1;"><i class="fa fa-user" aria-hidden="true"></i></div> 
+                    <h2 class="m-2 text-center lobsterTwo">User Profile</h2>
+                    <table class="m-2 text-white courgette">
+                        <tr>
+                            <td class="fs-4 ">Name </td>
+                            <td>:</td>
+                            <td class="fs-5 ">{{userObj?.username}}</td>
+                        </tr>
+                        <tr>
+                            <td class="fs-4">Email Id</td>
+                            <td>:</td>
+                            <td class="fs-5">{{userObj?.email}}</td>
+                        </tr>
+                        <tr>
+                            <td class="fs-4">Phone Number</td>
+                            <td>:</td>
+                            <td class="fs-5">{{userObj?.phone}}</td>
+                        </tr>
+                    </table>
+                    <div class="text-center mb-3">
+                        <button class="btn text-white bg-transparent shadow border border-dark kellyslab" (click)="onClick()">Back</button>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 col-sm-1 col-1"></div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+<app-footer></app-footer>

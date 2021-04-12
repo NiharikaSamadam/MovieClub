@@ -1,0 +1,19 @@
+.form-control.ng-touched.ng-invalid{
+    border: 3px solid red;
+}
+
+.form-select.ng-touched.ng-invalid{
+    border: 3px solid red;
+}
+
+
+
+.form-background{
+    background-color: #C5C6C7;
+}
+
+.btn-color{
+    background-color: #1F2833;
+    color: white;
+}
+

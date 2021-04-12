@@ -1,0 +1,48 @@
+
+ <div class="user-background " >
+    <ng-sidebar-container >
+        <!-- A sidebar -->
+        <ng-sidebar  closeOnClickOutside = "true" [(opened)]="opened">
+          <div (click)="toggleSidebar()" class="text-white " style="font-size: 2rem; "><i class="bi bi-arrow-left-circle"></i></div> 
+          <ul class="list-unstyled mt-2 charm">
+              <li class="nav-item">
+                  <a class="nav-link text-white" style="font-size: 1.5rem; " routerLink="profile"><i class="bi bi-person-circle me-2"></i>Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "movies"><i class="bi bi-camera-reels me-2"></i>Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "watchlist"><i class="bi bi-plus-circle me-2"></i>Watchlist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "history"><i class="fa fa-history me-2" aria-hidden="true"></i>History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white " style="font-size: 1.5rem; " routerLink = "favourites"><i class="bi bi-heart-fill me-2"></i>Favourites</a>
+              </li>
+          </ul>
+
+        </ng-sidebar>
+    
+        <!-- Page content -->
+        <div ng-sidebar-content>
+          <div class="d-flex flex-wrap justify-content-between ">
+          <div (click)="toggleSidebar()" class="text-white m-3 " style="font-size: 2rem; "><i class="bi bi-arrow-right-circle"></i></div>
+           <div class="col-3 m-3">
+          <div class="input-group  ">
+            <input list="search" name= "search" class="form-control" placeholder="Search by moviename or genres" aria-label="Search by moviename" aria-describedby="search" [(ngModel)] = "search">
+            <datalist id = "search">
+              <option *ngFor = "let m of moviesArray" [value] = "m.moviename">{{m.moviename}}</option>
+              <option *ngFor = "let g of genres" [value] = "g">{{g}}</option>
+            </datalist>
+            <button class="btn btn-outline-secondary text-white kellyslab" type="button" id="search" (click) = "searchMovie()">Search</button>
+          </div>
+        </div>
+        </div>
+          <router-outlet></router-outlet>
+        </div>
+        
+      </ng-sidebar-container>
+ </div>
+
+ 

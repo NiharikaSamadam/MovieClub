@@ -1,0 +1,72 @@
+<div class="addmovie-background">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 col-sm-1 col-1"></div>
+            <div class="col-md-4 col-lg-6 col-sm-10 col-10 m-3 py-3 fade-in-top form-background rounded-3">
+                <h3 class="text-center fw-bold charm">Update Movie</h3>
+                <form class="form " #ref="ngForm" (ngSubmit)="ref.form.valid && save(ref)">
+                    
+                    <!-- Language -->
+                    <div class="form-floating m-3">
+                        <!-- Movie Name -->
+                       <input type="text" class="form-control" id="language" placeholder="language" name="language" [(ngModel)] = "movieObj.language"  #language = "ngModel" readonly autocomplete="off">
+                       <label for="language">Language</label>
+                    </div>
+    
+                    <div class="form-floating m-3">
+                         <!-- Movie Name -->
+                        <input type="text" class="form-control" id="moviename" placeholder="moviename" name="moviename" [(ngModel)]="movieObj.moviename" required  #moviename = "ngModel" autocomplete="off">
+                        <label for="moviename">Movie Name</label>
+                      
+                        <!-- Validations for Movie Name -->
+                        <div *ngIf = "ref.submitted || moviename.touched && !moviename.valid || moviename.dirty" class="text-danger ">
+                            <div *ngIf = "moviename.errors?.required">*Movie Name is required</div>
+                        </div>
+                    </div>
+    
+                  <div class="form-floating m-3">
+                    <!-- Movie Name -->
+                   <input type="text" class="form-control" id="genres" placeholder="genres" name="genres" [(ngModel)] = "movieObj.genres"  #genres = "ngModel" autocomplete="off" disabled>
+                   <label for="genres">Genres</label>
+
+               </div>
+    
+                   <div class="form-floating m-3">
+                          <!-- Hero Name -->
+                          <input type="text" class="form-control" id="cast" placeholder="Cast" name="cast" [(ngModel)]="movieObj.cast" required #cast = "ngModel" autocomplete="off">
+                           <label for="cast">Cast</label>
+    
+                          <!-- Validations for Hero Name -->
+                         <div *ngIf = "ref.submitted || cast.touched && !cast.valid || cast.dirty" class="text-danger ">
+                             <div *ngIf = "cast.errors?.required">*Cast field is required</div>
+                         </div>
+                   </div>
+                  
+                   <div class="form-floating m-3">
+                    <!-- Director -->
+                      <input type="text" class="form-control" id="director" placeholder="Director"  name="director" [(ngModel)] = "movieObj.director" required #director = "ngModel" autocomplete="off">
+                      <label for="director">Director</label>
+    
+                     <!-- Validations for Director -->
+                    <div *ngIf = "ref.submitted || director.touched && !director.valid || director.dirty" class="text-danger ">
+                       <div *ngIf = "director.errors?.required">*Director field is required</div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-floating m-3">
+                    <!-- Movie Description -->
+                    <textarea class="form-control" placeholder="Description" id="description"  name = "description" #description="ngModel" disabled style="height:100px;"  [(ngModel)] = "movieObj.description"></textarea>
+                    <label for="description">Description</label>
+                 </div>
+    
+                  <!-- Submit Button -->
+                  <div class="text-center mx-auto">
+                      <button class="btn btn-success me-2 kellyslab" value="submit">Save</button>
+                     
+                  </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-lg-3 col-sm-1 col-1"></div>
+        </div>
+    </div>
+    </div>

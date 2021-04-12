@@ -1,0 +1,11 @@
+.description-background{
+    background-image: url("../../assets/images/profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+}
+
+.btn-color{
+    background-color: #45A29E;
+}

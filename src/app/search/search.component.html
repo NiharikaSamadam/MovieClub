@@ -1,0 +1,19 @@
+<div class="container my-5 ">
+    <div *ngIf = "moviesArray?.length">
+    <h1 class="text-center text-white charm mb-4">Results for your search <span style="color: #66fcf1; font-size: 4rem;">{{search}}</span></h1>
+    <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+       <div class="col" *ngFor="let movie of moviesArray">
+           <div class="card border-dark bg-transparent ">
+               <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie.moviename,movie.language)">
+               <div class="card-body">
+                   <div class="card-text p-2 fs-3 text-center bg-text lobsterTwo">
+                       <p>{{movie.moviename}}</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    </div>
+    <div *ngIf = "!moviesArray?.length">
+        <h1 class="text-center text-white charm">No Results Found for your Search <span style="color: #66fcf1;font-size: 4rem;">{{search}}</span></h1></div>
+</div>

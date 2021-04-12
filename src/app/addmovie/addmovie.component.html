@@ -1,0 +1,106 @@
+<div class="addmovie-background">
+<div class="container ">
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-sm-1 col-1"></div>
+        <div class="col-md-4 col-lg-6 col-sm-10 col-10 m-3 py-3 fade-in-top form-background rounded-3">
+            <h3 class="text-center fw-bold charm">Add Movie</h3>
+            <form class="form " #ref="ngForm" (ngSubmit)="ref.form.valid && upload(ref)">
+                
+                <!-- Language -->
+                <div class="form-group m-3">
+                    <label for="language">Language</label>
+                    <select id="language" class="form-select form-select-md" name="language" required #language="ngModel" ngModel placeholder="Language">
+                        <option disabled>Select Language</option>
+                        <option value="{{lan}}" *ngFor = "let lan of languages">{{lan}}</option>
+                    </select>
+
+                    <!-- Validations for Language -->
+                    <div *ngIf = "ref.submitted || language.touched && !language.valid || language.dirty" class="text-danger ">
+                        <div *ngIf = "language.errors?.required">*Please select any language</div>
+                    </div>
+                </div>
+
+                <div class="form-floating m-3">
+                     <!-- Movie Name -->
+                    <input type="text" class="form-control" id="moviename" placeholder="moviename" name="moviename" ngModel required #moviename = "ngModel" autocomplete="off">
+                    <label for="moviename">Movie Name</label>
+
+                    <!-- Validations for Movie Name -->
+                    <div *ngIf = "ref.submitted || moviename.touched && !moviename.valid || moviename.dirty" class="text-danger ">
+                        <div *ngIf = "moviename.errors?.required">*Movie Name is required</div>
+                    </div>
+                </div>
+
+               <!-- Upload Image -->
+               <div class="form-group m-3">
+                <label for="uploadphoto" class="form-label">
+                  <input type="file" class="form-control" (change)="incomingfile($event)" name="photo" accept="image/*" required #photo = "ngModel" placeholder="Upload file" ngModel>
+                </label>
+
+                 <!-- Validations for Movie Image -->
+                 <div *ngIf = "ref.submitted || photo.touched && !photo.valid || photo.dirty" class="text-danger ">
+                    <div *ngIf = "photo.errors?.required">*Movie Image is required</div>
+                </div>
+               </div>
+
+              <!-- Upload Video -->
+              <!-- <div class="form-group m-3">
+                <label for="uploadvideo" class="form-label">
+                  <input type="file" class="form-control" (change)="incomingfile1($event)" name="video" accept="video/*" placeholder="Upload Video">
+                </label>
+              </div> -->
+
+              <div class="form-floating m-3">
+                <!-- Movie Name -->
+               <input type="text" class="form-control" id="genres" placeholder="genres" name="genres" ngModel required #genres = "ngModel" autocomplete="off">
+               <label for="genres">Genres</label>
+
+               <!-- Validations for Movie Name -->
+               <div *ngIf = "ref.submitted || genres.touched && !genres.valid || genres.dirty" class="text-danger ">
+                   <div *ngIf = "genres.errors?.required">*Genres field is required</div>
+               </div>
+           </div>
+
+               <div class="form-floating m-3">
+                      <!-- Hero Name -->
+                      <input type="text" class="form-control" id="cast" placeholder="Cast" name="cast" ngModel required #cast = "ngModel" autocomplete="off">
+                       <label for="cast">Cast</label>
+
+                      <!-- Validations for Hero Name -->
+                     <div *ngIf = "ref.submitted || cast.touched && !cast.valid || cast.dirty" class="text-danger ">
+                         <div *ngIf = "cast.errors?.required">*Cast field is required</div>
+                     </div>
+               </div>
+              
+               <div class="form-floating m-3">
+                <!-- Director -->
+                  <input type="text" class="form-control" id="director" placeholder="Director"  name="director" ngModel required #director = "ngModel" autocomplete="off">
+                  <label for="director">Director</label>
+
+                 <!-- Validations for Director -->
+                <div *ngIf = "ref.submitted || director.touched && !director.valid || director.dirty" class="text-danger ">
+                   <div *ngIf = "director.errors?.required">*Director field is required</div>
+                </div>
+              </div>
+              
+              <div class="form-floating m-3">
+                <!-- Movie Description -->
+                <textarea class="form-control" placeholder="Description" id="description"  name = "description" #description="ngModel" style="height:100px;" required ngModel></textarea>
+                <label for="description">Description</label>
+
+               <!-- Validations for Movie Name -->
+               <div *ngIf = "ref.submitted || description.touched && !description.valid || description.dirty" class="text-danger ">
+                   <div *ngIf = "description.errors?.required">*Movie Description is required</div>
+               </div>
+           </div>
+
+              <!-- Submit Button -->
+              <div class="text-center mx-auto">
+                  <button class="btn btn-color kellyslab" value="submit">Upload</button>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-1 col-1"></div>
+    </div>
+</div>
+</div>

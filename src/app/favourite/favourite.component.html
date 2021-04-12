@@ -1,0 +1,21 @@
+<div *ngIf = "favouritesArray?.length">
+    <div class="container my-5">
+        <h1 class="header text-center mb-3 charm">Favourites</h1>
+        <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+           <div class="col" *ngFor="let favourite of favouritesArray">
+               <div class="card border-dark bg-transparent ">
+                <div class="text-end ">
+                    <span class=" text-danger m-2" style="font-size: 2rem;" (click)="removeFromFavourites(favourite)"><i class="bi bi-heart-fill"></i></span>
+                </div>
+                   <img [src] = "favourite?.image" alt="image" class="img-top" (click) = "description(favourite?.moviename,favourite?.language)">
+                   <div class="card-body">
+                       <div class="card-text p-2 fs-3 text-center bg-text lobsterTwo">
+                           <p>{{favourite?.moviename}}</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    </div>
+    <div *ngIf = "!favouritesArray?.length" ><h1 class="text-center text-white charm">No Movies in Favourites</h1></div>

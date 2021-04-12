@@ -1,0 +1,53 @@
+
+ <!-- List of Telugu Movies -->
+ <div class="container my-5 ">
+    <h1 class="header charm">Telugu Movies</h1>
+    <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+       <div class="col" *ngFor="let movie of telugumovies">
+           <div class="card border-dark bg-transparent ">
+               <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie.moviename,movie.language)">
+               <div class="card-body">
+                   <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                       <p>{{movie.moviename}}</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+<!-- List of Hindi Movies -->
+<div class="container my-5">
+    <h1 class="header charm">Hindi Movies</h1>
+    <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+       <div class="col" *ngFor="let movie of hindimovies">
+           <div class="card border-dark bg-transparent ">
+               <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie?.moviename,movie.language)">
+               <div class="card-body">
+                   <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                       <p>{{movie.moviename}}</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+<!-- List of English Movies -->
+<div class="container my-5">
+    <h1 class="header charm">English Movies</h1>
+    <div class="row  row-cols-md-3 row-cols-sm-2 row-cols-2 g-3 g-md-5">
+       <div class="col" *ngFor="let movie of englishmovies">
+           <div class="card border-dark bg-transparent ">
+               <img [src] = "movie.image" alt="image" class="img-top" (click) = "description(movie?.moviename,movie.language)">
+               <div class="card-body">
+                   <div class="card-text p-2 fs-3 text-center lobsterTwo">
+                       <p>{{movie.moviename}}</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+
