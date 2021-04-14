@@ -30,7 +30,7 @@
           <div (click)="toggleSidebar()" class="text-white m-3 " style="font-size: 2rem; "><i class="bi bi-arrow-right-circle"></i></div>
            <div class="col-lg-4 col-md-5 col-sm-6 col-11 m-3">
           <div class="input-group  ">
-            <input list="search" name= "search" class="form-control" placeholder="Search by moviename or genres" aria-label="Search by moviename" aria-describedby="search" [(ngModel)] = "search">
+            <input list="search" name= "search" class="form-control" placeholder="Search by moviename or genres" aria-label="Search by moviename" autocomplete="off" aria-describedby="search" [(ngModel)] = "search">
             <datalist id = "search">
               <option *ngFor = "let m of moviesArray" [value] = "m.moviename">{{m.moviename}}</option>
               <option *ngFor = "let g of genres" [value] = "g">{{g}}</option>
