@@ -23,7 +23,7 @@ export class MoviesListComponent implements OnInit {
               private router:Router,private toastr : ToastrService) { }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem("username")
+    
    
     this.ms.getmovieslist().subscribe(
       res =>{
