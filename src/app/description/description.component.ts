@@ -52,14 +52,14 @@ export class DescriptionComponent implements OnInit {
     )
   }
 
-  watchNow(movieObj){
+  watchNow(){
      
     //navigate to watch now 
     if(localStorage.getItem("usertype") == "user"){
     this.router.navigateByUrl(`/userdashboard/${localStorage.getItem("username")}/watchnow/${this.language}/${this.moviename}`)
 
     
-    let movie = {moviename : movieObj.moviename,language:this.language}
+    let movie = {moviename : this.moviename,language:this.language}
     this.ms.addtoHistory(movie).subscribe(
       res => {
         if(res['message'] == "failed"){
@@ -82,10 +82,10 @@ export class DescriptionComponent implements OnInit {
     }
   }
 
-  watchlist(movieObj){
+  watchlist(){
 
     
-    let movie = {moviename : movieObj.moviename,language:this.language}
+    let movie = {moviename : this.moviename,language:this.language}
     
     if(localStorage.getItem("usertype") == "user"){
     this.ms.addtoWatchlist(movie).subscribe(
@@ -117,10 +117,10 @@ export class DescriptionComponent implements OnInit {
   }
  }
 
- favourites(movieObj){
+ favourites(){
 
   
-  let movie = {moviename : movieObj.moviename,language:this.language}
+  let movie = {moviename : this.moviename,language:this.language}
 
     if(localStorage.getItem("usertype") == "user"){
     this.ms.addtoFavourites(movie).subscribe(

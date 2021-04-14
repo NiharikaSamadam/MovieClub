@@ -6,8 +6,8 @@
        <div class="d-flex justify-content-between m-3">
            <h2 class="text-white lobsterTwo">{{movieObj?.moviename}}</h2>
            <div class="d-flex justify-content-between">
-               <div class="text-white fs-3 me-3" (click) = "favourites(movieObj)"><i class="bi bi-heart"></i></div>
-               <div class="text-white fs-3" (click) = "watchlist(movieObj)"><i class="bi bi-plus-circle"></i></div>
+               <div class="text-white fs-3 me-3" (click) = "favourites()"><i class="bi bi-heart"></i></div>
+               <div class="text-white fs-3" (click) = "watchlist()"><i class="bi bi-plus-circle"></i></div>
            </div>
        </div>
        <div class="row g-2 m-3  courgette text-white">
@@ -29,7 +29,7 @@
        <p class="fs-5">{{movieObj?.description}}</p>
     </div>
     <div class="text-center mb-3">
-          <button class="btn text-white btn-color text-center fs-5 kellyslab" (click) = "watchNow(movieObj)">Watch Now</button>
+          <button class="btn text-white btn-color text-center fs-5 kellyslab" (click) = "watchNow()">Watch Now</button>
     </div>
     </div>
     <div class="col-md-4 col-sm-1 col-1"></div>
