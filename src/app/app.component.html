@@ -6,16 +6,16 @@
     </button>
     <div class="collapse navbar-collapse charm" id="navbarmenu">
       <ul class="navbar-nav ms-auto me-5">
-        <li class="nav-item">
-          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "!loginStatus"  routerLink="home">Home</a>
-          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "loginStatus"  routerLink="" (click)="dashboard()"></a>
+        <li class="nav-item" >
+          <a class="nav-link active fs-4 p-2 text-white" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf = "!loginStatus"  routerLink="home">Home</a>
+          <a class="nav-link active fs-4 p-2 text-white" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf = "loginStatus"  routerLink="" (click)="dashboard()"></a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link active fs-4  p-2"  *ngIf = "loginStatus && username != null">Welcome {{username}}</a>
+          <a class="nav-link active fs-4  p-2" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf = "loginStatus && username != null">Welcome {{username}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "!loginStatus" routerLink="login">Login</a>
-          <a class="nav-link active fs-4 p-2 text-white" *ngIf = "loginStatus" routerLink="" (click) = "logOut()">Logout</a>
+          <a class="nav-link active fs-4 p-2 text-white" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf = "!loginStatus" routerLink="login">Login</a>
+          <a class="nav-link active fs-4 p-2 text-white" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf = "loginStatus" routerLink="" (click) = "logOut()">Logout</a>
         </li>
       </ul>
     </div>
