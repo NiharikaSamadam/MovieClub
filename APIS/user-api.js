@@ -151,6 +151,7 @@ userApiObj.get('/getmovies/:username',validateToken,expressHandlers(async(req,re
             watchlist.push(movie)
         }
     }
+    
     res.send({watchList:watchlist})
 
 }))
