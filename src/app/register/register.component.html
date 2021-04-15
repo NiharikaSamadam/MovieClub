@@ -14,7 +14,7 @@
                         <!-- Validations for username -->
                         <div *ngIf = "submitted || getcontrols().username.touched && !getcontrols().username.valid || getcontrols().username.dirty" class="text-danger ">
                             <div *ngIf = "getcontrols().username.errors?.required">*Username is required</div>
-                            <div *ngIf = "getcontrols().username.errors?.minlength || getcontrols().username.errors?.pattern">*Accepts alphabets & spaces, minimum length should be 4</div>
+                            <div *ngIf = "getcontrols().username.errors?.minlength || getcontrols().username.errors?.pattern">*Accepts alphabets, minimum length should be 4</div>
                         </div>
                     </div>
     

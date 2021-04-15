@@ -28,14 +28,14 @@
                 <!-- USERNAME -->
                 <div class="form-floating m-3">
                     <input type="text" class="form-control" id="username" placeholder="username" required minlength = "4" 
-                            pattern="^[a-zA-Z ]*$"  #username = "ngModel" name = "username" ngModel autocomplete="off">
+                            pattern="^[a-zA-Z]*$"  #username = "ngModel" name = "username" ngModel autocomplete="off">
                     <label for="username">Username</label>
 
                     <!-- Validations for username -->
                     <div *ngIf = "ref.submitted || username.touched && !username.valid || username.dirty" class="text-danger ">
                         <div *ngIf = "username.errors?.required">*Username is required</div>
                         <div *ngIf = "username.errors?.minlength || username.errors?.pattern">
-                            *Accepts alphabets & spaces, minimum length should be 4
+                            *Accepts alphabets, minimum length should be 4
                         </div>
                     </div>
                 </div>

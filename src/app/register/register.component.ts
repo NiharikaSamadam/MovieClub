@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
              this.router.navigateByUrl("/login")
           }
           else{
-            
+            this.registerForm.reset()
             this.toastr.info(res['message'])
           }
         },
