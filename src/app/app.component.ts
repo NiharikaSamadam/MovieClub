@@ -67,5 +67,6 @@ export class AppComponent implements OnInit{
 
   logOut(){
    this.ls.logOutService()
+   this.router.navigateByUrl("/home")
   }
 }

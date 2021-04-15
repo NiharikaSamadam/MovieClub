@@ -71,7 +71,7 @@ export class LocalStorageService {
     this.setUserType(null)
      
      //navigate to login
-     this.router.navigateByUrl("/home")
+     this.router.navigateByUrl("/login")
 
   }
 
